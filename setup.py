@@ -33,5 +33,5 @@ setup(
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.7",
     ],
-    scripts=["scripts/*.py"],
+    scripts=["scripts/comp_stacking.py", "scripts/S0A_dowload_ASDF_MPI.py", "scripts/S0B_to_ASDF.py", "scripts/S1_fft_cc_MPI.py", "scripts/S2_stacking.py"],
 )
