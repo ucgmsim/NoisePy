@@ -4,7 +4,6 @@ setup(
     version="1.0",
     name="noisepy",
     packages=find_packages(),
-    include_package_data=True,
     python_requires=">=3",
     install_requires=[
         "numpy",

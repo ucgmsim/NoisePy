@@ -4,8 +4,9 @@ import scipy
 import pycwt
 import pyasdf
 import numpy as np
-import noise_module
 import matplotlib.pyplot as plt
+
+from noisepy import noise_module
 
 '''
 this application script of NoisePy is to measure group velocity on the resulted cross-correlation

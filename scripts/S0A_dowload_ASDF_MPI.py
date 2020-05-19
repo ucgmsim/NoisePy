@@ -7,10 +7,11 @@ import pyasdf
 import os, glob
 import numpy as np
 import pandas as pd
-import noise_module
 from mpi4py import MPI
 from obspy import UTCDateTime
 from obspy.clients.fdsn import Client
+
+from noisepy import noise_module
 
 if not sys.warnoptions:
     import warnings

@@ -7,9 +7,10 @@ import pyasdf
 import os, glob
 import datetime
 import numpy as np
-import noise_module
 import pandas as pd
 from mpi4py import MPI
+
+from noisepy import noise_module
 
 if not sys.warnoptions:
     import warnings
