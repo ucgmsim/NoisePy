@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import gc
 import sys
 import time

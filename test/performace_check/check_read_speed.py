@@ -41,7 +41,7 @@ type2  = 'HNU'
 tag1   = '2010_12_20_1'
 tag2   = '2010_12_20'
 
-for ii in range(4):
-    %time read_data(sfile1,seg1,type1,tag1)
-    %time read_data1(sfile2,10,20,type2,tag2)
-    %time read_data(sfile2,seg2,type2,tag2)
+#for ii in range(4):
+    #time read_data(sfile1,seg1,type1,tag1)
+    #time read_data1(sfile2,10,20,type2,tag2)
+    #time read_data(sfile2,seg2,type2,tag2)
