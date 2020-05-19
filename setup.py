@@ -2,8 +2,8 @@ from setuptools import setup, find_packages
 
 setup(
     version="1.0",
-    name="noisepy",
-    packages=find_packages(),
+    name="NoisePy",
+    packages=["noisepy"],
     python_requires=">=3",
     install_requires=[
         "numpy",
