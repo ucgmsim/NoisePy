@@ -40,17 +40,17 @@ NOTE:
 tt0=time.time()
 
 # data/file paths
-rootpath  = '/Users/chengxin/Documents/Kanto'                           # absolute path for your project
+rootpath  = os.path.abspath('./NoisePy_example')                        # absolute path for your project
 RAWDATA   = os.path.join(rootpath,'RAW_DATA')                           # dir where mseed/SAC files are located
-DATADIR   = os.path.join(rootpath,'Kanto_sac')                          # dir where cleaned data in ASDF format are going to be outputted
+DATADIR   = os.path.join(rootpath,'sac')                                # dir where cleaned data in ASDF format are going to be outputted
 locations = os.path.join(rootpath,'station.txt')                        # station info including network,station,channel,latitude,longitude,elevation
-if not os.path.isfile(locations): 
+if not os.path.isfile(locations):
     raise ValueError('Abort! station info is needed for this script')
 locs = pd.read_csv(locations)
 nsta = len(locs)
 
 # useful parameters for cleaning the data
-input_fmt = 'asdf'                                                      # input file format between 'sac' and 'mseed' 
+input_fmt = 'h5'                                                        # input file format between 'sac' and 'mseed' 
 samp_freq = 10                                                          # targeted sampling rate
 stationxml= False                                                       # station.XML file exists or not
 rm_resp   = 'no'                                                        # select 'no' to not remove response and use 'inv','spectrum','RESP', or 'polozeros' to remove response
@@ -61,7 +61,7 @@ flag      = False                                                       # print 
 
 # having this file saves a tons of time: see L95-126 for why
 wiki_file = os.path.join(rootpath,'allfiles_time.txt')                  # file containing the path+name for all sac/mseed files and its start-end time      
-allfiles_path = os.path.join(DATADIR,'*/*'+input_fmt)                   # make sure all sac/mseed files can be found through this format
+allfiles_path = os.path.join(RAWDATA, '*.{}'.format(input_fmt))         # make sure all sac/mseed files can be found through this format
 messydata = False                                                       # set this to False when daily noise data is well sorted 
 
 # targeted time range

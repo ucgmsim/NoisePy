@@ -48,14 +48,14 @@ Enjoy the NoisePy journey!
 tt0=time.time()
 
 # paths and filenames
-rootpath = '/Users/chengxin/Documents/NoisePy_example/AZ'       # roothpath for the project
+rootpath = os.path.abspath('./NoisePy_example')       # roothpath for the project
 direc  = os.path.join(rootpath,'RAW_DATA')                      # where to store the downloaded data
-dlist  = os.path.join(direc,'station.txt')                      # CSV file for station location info
+dlist  = os.path.join(rootpath,'station.txt')                      # CSV file for station location info
 
 # download parameters
 client    = Client('SCEDC')                                     # client/data center. see https://docs.obspy.org/packages/obspy.clients.fdsn.html for a list
-down_list = True                                                # download stations from a pre-compiled list or not
-flag      = False                                               # print progress when running the script; recommend to use it at the begining
+down_list = False                                               # download stations from a pre-compiled list or not
+flag      = True                                                # print progress when running the script; recommend to use it at the begining
 samp_freq = 20                                                  # targeted sampling rate at X samples per seconds 
 rm_resp   = 'no'                                                # select 'no' to not remove response and use 'inv','spectrum','RESP', or 'polozeros' to remove response
 respdir   = os.path.join(rootpath,'resp')                       # directory where resp files are located (required if rm_resp is neither 'no' nor 'inv')

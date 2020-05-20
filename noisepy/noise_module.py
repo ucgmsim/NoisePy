@@ -116,11 +116,11 @@ def make_timestamps(prepro_para):
         else:
             # get rough estimates of the time based on the folder: need modified to accommodate your data
             for ii in range(nfiles):
-                year  = int(allfiles[ii].split('/')[-2].split('_')[1])
+                year  = int(allfiles[ii].split('/')[-1].split('_')[0])
                 #julia = int(allfiles[ii].split('/')[-2].split('_')[2])
                 #all_stimes[ii,0] = obspy.UTCDateTime(year=year,julday=julia)-obspy.UTCDateTime(year=1970,month=1,day=1)
-                month = int(allfiles[ii].split('/')[-2].split('_')[2])
-                day   = int(allfiles[ii].split('/')[-2].split('_')[3])
+                month = int(allfiles[ii].split('/')[-1].split('_')[1])
+                day   = int(allfiles[ii].split('/')[-1].split('_')[2])
                 all_stimes[ii,0] = obspy.UTCDateTime(year=year,month=month,day=day)-obspy.UTCDateTime(year=1970,month=1,day=1)
                 all_stimes[ii,1] = all_stimes[ii,0]+86400
         
