@@ -40,7 +40,7 @@ tt0=time.time()
 ########################################
 
 # absolute path parameters
-rootpath  = '/Volumes/Chengxin/monitor'                             # root path for this data processing
+rootpath  = os.path.abspath('./NoisePy_example')                    # root path for this data processing
 CCFDIR    = os.path.join(rootpath,'CCF')                            # dir where CC data is stored
 STACKDIR  = os.path.join(rootpath,'STACK')                          # dir where stacked data is going to
 locations = os.path.join(rootpath,'station.txt')                    # station info including network,station,channel,latitude,longitude,elevation

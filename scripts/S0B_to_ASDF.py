@@ -65,9 +65,9 @@ allfiles_path = os.path.join(RAWDATA, '*.{}'.format(input_fmt))         # make s
 messydata = False                                                       # set this to False when daily noise data is well sorted 
 
 # targeted time range
-start_date = ['2010_12_06_0_0_0']                                       # start date of local data
-end_date   = ['2010_12_16_0_0_0']                                       # end date of local data
-inc_hours  = 8                                                          # sac/mseed file length for a continous recording
+start_date = ['2014_01_11_0_0_0']                                       # start date of local data
+end_date   = ['2014_01_21_0_0_0']                                       # end date of local data
+inc_hours  = 24                                                         # sac/mseed file length for a continous recording
 
 # get rough estimate of memory needs to ensure it now below up in S1
 cc_len    = 1800                                                        # basic unit of data length for fft (s)
