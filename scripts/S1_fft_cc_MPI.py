@@ -68,6 +68,7 @@ cc_method = "xcorr"  # 'xcorr' for pure cross correlation, 'deconv' for deconvol
 flag = False  # print intermediate variables and computing time for debugging purpose
 acorr_only = False  # only perform auto-correlation
 xcorr_only = True  # only perform cross-correlation or not
+# will be read from asdf instead if available
 ncomp = 1  # 1 or 3 component data (needed to decide whether do rotation)
 
 # station/instrument info for input_fmt=='sac' or 'mseed'
@@ -116,7 +117,7 @@ if input_fmt == "asdf":
     start_date = down_info["start_date"]
     end_date = down_info["end_date"]
     inc_hours = down_info["inc_hours"]
-    # ncomp      = down_info['ncomp']
+    ncomp      = down_info['ncomp']
 else:  # sac or mseed format
     samp_freq = 20
     freqmin = 0.02
@@ -238,7 +239,7 @@ for ick in range(rank, splits, size):
         ds = pyasdf.ASDFDataSet(tdir[ick], mpi=False, mode="r")
         sta_list = ds.waveforms.list()
         nsta = ncomp * len(sta_list)
-        print("found %d stations in total" % nsta)
+        print("found %d streams in total" % nsta)
     else:
         sta_list = sorted(glob.glob(os.path.join(tdir[ick], "*" + input_fmt)))
     if len(sta_list) == 0:

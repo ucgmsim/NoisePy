@@ -55,7 +55,7 @@ locs = pd.read_csv(locations)
 nsta = len(locs)
 
 # useful parameters for cleaning the data
-input_fmt = "h5"  # input file format between 'sac' and 'mseed'
+input_fmt = "mseed"  # input file format between 'sac' and 'mseed'
 samp_freq = 10  # targeted sampling rate
 stationxml = False  # station.XML file exists or not
 rm_resp = "no"  # select 'no' to not remove response and use 'inv','spectrum','RESP', or 'polozeros' to remove response
