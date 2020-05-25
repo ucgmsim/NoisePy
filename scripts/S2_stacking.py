@@ -21,7 +21,8 @@ if not sys.warnoptions:
 Stacking script of NoisePy to:
     1) load cross-correlation data for sub-stacking (if needed) and all-time average;
     2) stack data with either linear or phase weighted stacking (pws) methods (or both);
-    3) save outputs in ASDF or SAC format depend on user's choice;
+    3) save outputs in ASDF or SAC format depend on user's choice (for latter option, find the script of write_sac
+           in the folder of application_modules;
     4) rotate from a E-N-Z to R-T-Z system if needed.
 
 Authors: Chengxin Jiang (chengxin_jiang@fas.harvard.edu)
