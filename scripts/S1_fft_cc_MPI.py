@@ -94,7 +94,7 @@ smooth_N = (
 
 # cross-correlation parameters
 maxlag = 400  # lags of cross-correlation to save (sec)
-substack = False  # sub-stack daily cross-correlation or not
+substack = True  # sub-stack daily cross-correlation or not
 substack_len = (
     12 * cc_len
 )  # how long to stack over (for monitoring purpose): need to be multiples of cc_len
