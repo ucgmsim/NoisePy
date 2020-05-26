@@ -69,26 +69,19 @@ freqmin = 0.05  # pre filtering frequency bandwidth
 freqmax = 2  # note this cannot exceed Nquist freq
 
 # targeted region/station information: only needed when not using dlist
-lamin, lamax, lomin, lomax = (
-    33.4,
-    33.8,
-    -117.0,
-    -116.5,
-)
-
+lamin = 32.5
+lamax = 36.0
+lomin = -121.0
+lomax = -114.0
 # list of wanted station parameters when downloading
 # when not using dlist, TODO: why not HH1, HH2 and rotate to N and E?
-chan_list = [
-    "HHE",
-    "HHN",
-    "HHZ",
-]
-net_list = ["AZ"]
+chan_list = ["BHE", "BHN", "BHZ"]
+net_list = ["CI"]
 sta_list = ["*"]
-
+# total time period
 starttime = UTCDateTime("2016-07-01T00:00:00")
 endtime = UTCDateTime("2016-07-02T00:00:00")
-# request size
+# request chunk size (hours)
 inc_hours = 24
 # this won't work if we have NE and 12 components
 ncomp = len(chan_list)
@@ -96,7 +89,7 @@ ncomp = len(chan_list)
 # get rough estimate of memory needs to ensure it now below up in S1
 cc_len = 1800  # basic unit of data length for fft (s)
 step = 450  # overlapping between each cc_len (s)
-MAX_MEM = 5.0  # maximum memory allowed per core in GB
+MAX_MEM = 40.0  # maximum memory allowed per core in GB (don't think this is per core)
 FLOAT_SIZE = 4
 
 # change this but currently setup to use custom format

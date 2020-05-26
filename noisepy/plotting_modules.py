@@ -6,6 +6,7 @@ import scipy
 import pyasdf
 import numpy as np
 import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from scipy.fftpack import next_fast_len
 from obspy.signal.filter import bandpass
